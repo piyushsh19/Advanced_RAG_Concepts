@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "advanced-rag-concepts"
+version = "0.1.0"
+description = "A hands-on learning repository for advanced RAG systems"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = [
+  "langchain",
+  "langchain-community",
+  "langchain-openai",
+  "langchain-text-splitters",
+  "langgraph",
+  "faiss-cpu",
+  "pypdf",
+  "python-dotenv",
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic-settings",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "ruff", "mypy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
